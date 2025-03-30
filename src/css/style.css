@@ -80,6 +80,10 @@ header nav ul li a {
   padding: 50px 20px;
 }
 
+#bio > p {
+  margin-top: 0.625rem;
+}
+
 /* Tabs */
 .tabs {
   text-align: center;
