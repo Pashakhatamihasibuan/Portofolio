@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portofolio | Nama Anda</title>
+    <title>Portofolio | Pasha Khatami Hasibuan</title>
     <link rel="stylesheet" href="./src/css/style.css" />
-    <script src="/src/js/index.js" defer></script>
+    <script src="./src/js/index.js" defer></script>
   </head>
   <body>
     <header>
@@ -15,46 +15,64 @@
         <ul>
           <li><a href="#bio">Tentang</a></li>
           <li><a href="#projects">Proyek</a></li>
-          <li><a href="#contact">Kontak</a></li>
         </ul>
       </nav>
     </header>
 
     <section id="hero">
-      <h2>Hai, Saya <span>Pasha Khatami Hasibuan</span></h2>
-      <p>Frontend Developer | UI/UX Enthusiast</p>
-      <a href="#projects" class="btn">Lihat Proyek</a>
+      <div class="content">
+        <h2>Hai, Saya <span>Pasha Khatami Hasibuan</span></h2>
+        <p>Frontend Developer | UI Enthusiast</p>
+      </div>
     </section>
 
     <section id="bio">
       <h2>Tentang Saya</h2>
-      <p>Saya seorang developer yang antusias membangun website dengan desain yang menarik dan pengalaman yang baik bagi pengguna.</p>
+      <p>Saya seorang developer yang fokus pada membangun website yang cepat, responsif, dan user-friendly.</p>
     </section>
 
     <section id="projects">
       <h2>Proyek Saya</h2>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-category="ui-design">UI Design</button>
+        <button class="tab-btn" data-category="frontend">FrontEnd</button>
+      </div>
+
       <div class="project-container">
-        <div class="project">
-          <img src="images/project1.jpg" alt="Proyek 1" />
-          <h3>Proyek 1</h3>
-          <p>Deskripsi singkat proyek.</p>
+        <!-- UI Design Projects -->
+        <div class="project ui-design">
+          <a href="https://dribbble.com/shots/25688170-Exploration-Beautiful-Rooms" target="_blank">
+            <img src="./src/images/Exploration-room.png" alt="Beautiful Room for Every Home" />
+            <div class="overlay">
+              <h3>Exploration Beautiful Room</h3>
+            </div>
+          </a>
         </div>
-        <div class="project">
-          <img src="images/project2.jpg" alt="Proyek 2" />
-          <h3>Proyek 2</h3>
-          <p>Deskripsi singkat proyek.</p>
+        <div class="project ui-design">
+          <a href="https://dribbble.com/shots/25654618-Griyo-App" target="_blank">
+            <img src="./src/images/griyo-app.png" alt="Griyo App" />
+            <div class="overlay">
+              <h3>Griyo App</h3>
+            </div>
+          </a>
+        </div>
+
+        <!-- FrontEnd Projects -->
+        <div class="project frontend hidden">
+          <a href="https://pashakhatamihasibuan.github.io/nusantara-rasa.github.io./" target="_blank">
+            <img src="./src/images/Nusantara-rasa.png" alt="Website Makanan Nusantara" />
+            <div class="overlay">
+              <h3>Nusantara Rasa</h3>
+              <p>TailwindCSS</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Hubungi Saya</h2>
-      <form>
-        <input type="text" placeholder="Nama" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Pesan" required></textarea>
-        <button type="submit">Kirim</button>
-      </form>
-    </section>
+    <footer>
+      <p>&copy; 2025 Pasha Khatami Hasibuan. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>
