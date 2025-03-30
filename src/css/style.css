@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #f4f4f4;
+  background: #f5f5f5;
   color: #333;
   transition: background 0.3s, color 0.3s;
 }
@@ -46,10 +46,17 @@ header nav ul li a {
 
 /* Hero Section */
 #hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #007bff, #00bcd4);
   color: white;
+  text-align: center;
+}
+
+#hero .content {
+  max-width: 600px;
 }
 
 #hero h2 span {
@@ -67,6 +74,35 @@ header nav ul li a {
   border-radius: 5px;
 }
 
+/* Bio Section */
+#bio {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* Tabs */
+.tabs {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #699ad0ff;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background: #0056b3;
+}
+
 /* Projects */
 #projects {
   padding: 50px 20px;
@@ -75,46 +111,48 @@ header nav ul li a {
 
 .project-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
 
 .project {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 10px;
   transition: transform 0.3s;
 }
 
-.project:hover {
-  transform: scale(1.05);
+.project:hover img {
+  transform: scale(1.1);
 }
 
-/* Contact */
-#contact {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-form {
-  max-width: 400px;
-  margin: auto;
-}
-
-input,
-textarea {
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
   padding: 10px;
-  margin: 10px 0;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-button {
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
+.project:hover .overlay {
+  opacity: 1;
+}
+
+/* Hidden State */
+.hidden {
+  display: none;
 }
 
 /* Dark Mode */
@@ -124,7 +162,7 @@ button {
 }
 
 .dark-mode #hero {
-  background: #444;
+  background: linear-gradient(to right, #444, #222);
 }
 
 .dark-mode .btn {
@@ -135,4 +173,69 @@ button {
 .dark-mode .project {
   background: #333;
   color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+/* Media Query untuk Tablet */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #hero {
+    padding: 50px 20px;
+    height: auto;
+  }
+
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    width: 90%;
+  }
+}
+
+/* Media Query untuk Mobile */
+@media (max-width: 480px) {
+  header {
+    padding: 1em;
+  }
+
+  #hero {
+    padding: 30px 20px;
+  }
+
+  #hero h2 {
+    font-size: 24px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .project {
+    width: 100%;
+  }
 }
